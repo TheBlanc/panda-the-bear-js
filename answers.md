@@ -54,3 +54,40 @@ submitForm.disabled = true
 14.
 bioInfo = document.querySelector('.bio-info')
 bioInfo.remove()
+
+
+PART 2
+
+Removing Elements from the DOM
+1.
+timeTravelSkill = document.querySelectorAll('.bar-default')[2]
+timeTravelSkill.remove()
+
+Adding Elements to the DOM
+1.
+pikachuDiv = document.getElementById('right-image')
+pikachu = pikachuDiv.firstElementChild
+pikachuClone = pikachu.cloneNode()
+portfolioContainer = document.querySelector('.portfolio-container')
+portfolioContainer.appendChild(pikachuClone)
+
+2.
+for (var i = 0; i < 10; i++) {
+pikachuClone = pikachu.cloneNode();
+document.querySelector('.portfolio-container').appendChild(pikachuClone);
+}
+
+3.
+var listItem = document.createElement('li');
+var leftSpan = document.createElement('span');
+var lastUpdatedOn = document.createTextNode('Page last updated on');
+leftSpan.appendChild(lastUpdatedOn);
+listItem.appendChild(leftSpan);
+
+rightSpan = document.createElement('span');
+lastUpdatedDate = new Date(2017, 08, 15, 14, 45, 20);
+rightSpan.appendChild(lastUpdatedText);
+listItem.appendChild(rightSpan);
+
+bioItem = document.querySelector('.bio-info');
+bioItem.appendChild(listItem);
